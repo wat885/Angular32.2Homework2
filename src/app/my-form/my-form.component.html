@@ -1,27 +1,23 @@
 <form [formGroup]="form">
     <div>
-        Phone : <input formControlName="phoneNo">
+        <input formControlName="thb" >
+        <div class="box"> THB  </div>
+
     </div>
+    <input formControlName="usd" value="{{convert}}" disabled>
+    <div class="box">  USD   </div>
+
+
     <div>
-        Email : <input formControlName="email">
-        <span style="color: red;" *ngIf="form.get('email').errors?.email">Email is invalid</span>
+        <button class="button" (click)="submitForm()">Convert</button>
     </div>
-    <div>
-        Password : <input type="password" formControlName="password">
-        <span style="color: red;" *ngIf="form.get('password').errors?.required">Password required</span>
-        <span style="color: red;" *ngIf="form.get('password').errors?.minlength">Password should be at least 8
-            characters</span>
-    </div>
-    <div>
-        Confirm Password : <input type="password" formControlName="confirmPassword">
-        <span style="color: red;" *ngIf="form.get('confirmPassword').errors?.required">Password required</span>
-    </div>
-    <button [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+
+   
 
 </form>
 
-<p> Form Data Below</p>
+<!-- <p> Form Data Below</p>
 
 <code>
     {{form.value | json}}
-</code>
+</code> -->
